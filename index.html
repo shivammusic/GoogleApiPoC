@@ -5,12 +5,22 @@ API key is  vulnerable  for Embed (Basic-Free) API! Here is the PoC HTML code wh
 
 <!--<iframe width="1000" height="800" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLGzMqyZSK0BEtZUPehNrWPN3pQrG96II" allowfullscreen" allowfullscreen></iframe>
 -->
-<iframe
-  width="600"
-  height="450"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBLGzMqyZSK0BEtZUPehNrWPN3pQrG96II
-    &q=Space+Needle,Seattle+WA">
-</iframe>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLGzMqyZSK0BEtZUPehNrWPN3pQrG96II&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
